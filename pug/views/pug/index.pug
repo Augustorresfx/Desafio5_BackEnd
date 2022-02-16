@@ -1,0 +1,18 @@
+extends layout/head.pug
+block content
+  table(class="mt-4 table align-middle")
+    thead
+      tr
+        th(scope="col") Nombre
+        th(scope="col") Precio
+        th(scope="col") Imagen del producto
+    tbody
+      each product in products
+        tr
+          td= product.name
+          td= product.price
+          td(class="align-middle")
+            img(class="img-fluid" src= product.image alt= product.name)         
+      else 
+        td
+          h3 No hay productos
